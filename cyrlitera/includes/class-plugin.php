@@ -53,8 +53,22 @@ class WCTR_Plugin extends Wbcr_Factory480_Plugin {
 				$this->register_pages();
 			}
 		} );
+
+		add_filter( 'themeisle_sdk_products', [ __CLASS__, 'register_sdk' ] );
 	}
 
+	/**
+	 * Register product into SDK.
+	 *
+	 * @param array $products All products.
+	 *
+	 * @return array Registered product.
+	 */
+	public static function register_sdk( $products ) {
+		$products[] = WCTR_BASEFILE;
+
+		return $products;
+	}
 	/**
 	 * Статический метод для быстрого доступа к интерфейсу плагина.
 	 *
@@ -86,7 +100,6 @@ class WCTR_Plugin extends Wbcr_Factory480_Plugin {
 	 */
 	private function register_pages() {
 		self::app()->registerPage( 'WCTR_CyrliteraPage', WCTR_PLUGIN_DIR . '/admin/pages/class-page-cyrlitera.php' );
-		self::app()->registerPage( 'WCTR_MoreFeaturesPage', WCTR_PLUGIN_DIR . '/admin/pages/class-page-more-features.php' );
 	}
 
 	/**

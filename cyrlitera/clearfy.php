@@ -41,7 +41,7 @@ if ( ! defined( 'WCTR_PLUGIN_ACTIVE' ) ) {
 		new WCTR_Plugin();
 	} catch( Exception $e ) {
 		$wctr_plugin_error_func = function () use ( $e ) {
-			$error = sprintf( "The %s plugin has stopped. <b>Error:</b> %s Code: %s", 'Webcraftic Cyrlitera', $e->getMessage(), $e->getCode() );
+			$error = sprintf( "The %s plugin has stopped. <b>Error:</b> %s Code: %s", 'Cyrlitera', $e->getMessage(), $e->getCode() );
 			echo '<div class="notice notice-error"><p>' . $error . '</p></div>';
 		};
 

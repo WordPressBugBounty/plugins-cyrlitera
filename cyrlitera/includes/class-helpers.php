@@ -100,7 +100,7 @@ class WCTR_Helper {
 			}
 		}
 
-		$term = $is_term ? $wpdb->get_var( $wpdb->prepare( "SELECT slug FROM {$wpdb->terms} WHERE name = '%s'", $title ) ) : '';
+		$term = $is_term ? $wpdb->get_var( $wpdb->prepare( "SELECT slug FROM {$wpdb->terms} WHERE name = %s", $title ) ) : '';
 
 		if ( empty( $term ) ) {
 			$title = self::transliterate( $title );

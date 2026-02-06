@@ -1,13 +1,13 @@
 <?php
 /**
- * Plugin Name: Webcraftic Cyrlitera – transliteration of links and file names
- * Plugin URI: https://webcraftic.com
+ * Plugin Name: Cyrlitera – transliteration of links and file names
+ * Plugin URI: https://wordpress.org/plugins/cyrlitera/
  * Description: The plugin converts Cyrillic, Georgian links, filenames into Latin. It is necessary for correct work of WordPress plugins and improve links readability.
- * Author: Webcraftic <wordpress.webraftic@gmail.com>
- * Version: 1.2.0
+ * Author: Themeisle
+ * Version: 1.3.2
  * Text Domain: cyrlitera
  * Domain Path: /languages/
- * Author URI: https://webcraftic.com
+ * Author URI: https://themeisle.com
  * Framework Version: FACTORY_480_VERSION
  */
 
@@ -43,7 +43,7 @@ require_once( dirname( __FILE__ ) . '/libs/factory/core/includes/class-factory-r
 $wctr_plugin_info = [
 	'prefix'               => 'wbcr_cyrlitera_',
 	'plugin_name'          => 'wbcr_cyrlitera',
-	'plugin_title'         => 'Webcraftic Cyrlitera',
+	'plugin_title'         => 'Cyrlitera',
 
 	// PLUGIN SUPPORT
 	'support_details'      => [
@@ -103,6 +103,7 @@ if ( ! $wctr_compatibility->check() ) {
 define( 'WCTR_PLUGIN_ACTIVE', true );
 define( 'WCTR_PLUGIN_VERSION', $wctr_compatibility->get_plugin_version() );
 define( 'WCTR_PLUGIN_DIR', dirname( __FILE__ ) );
+define( 'WCTR_BASEFILE', __FILE__);
 define( 'WCTR_PLUGIN_BASE', plugin_basename( __FILE__ ) );
 define( 'WCTR_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 
@@ -119,6 +120,7 @@ require_once( WCTR_PLUGIN_DIR . '/includes/class-helpers.php' );
 require_once( WCTR_PLUGIN_DIR . '/includes/class-plugin.php' );
 
 try {
+	require_once WCTR_PLUGIN_DIR . '/vendor/autoload.php';
 	new WCTR_Plugin( __FILE__, array_merge( $wctr_plugin_info, [
 		'plugin_version'     => WCTR_PLUGIN_VERSION,
 		'plugin_text_domain' => $wctr_compatibility->get_text_domain(),
@@ -128,7 +130,13 @@ try {
 	define( 'WCTR_PLUGIN_THROW_ERROR', true );
 
 	$wctr_plugin_error_func = function () use ( $e ) {
-		$error = sprintf( "The %s plugin has stopped. <b>Error:</b> %s Code: %s", 'Webcraftic Cyrlitera', $e->getMessage(), $e->getCode() );
+		$error = sprintf(
+			// translators: %1$s is plugin name, %2$s is HTML tag, %3%s is HTML tag, %4$s is error message, %5$s is error code.
+			__( 'The %s plugin has stopped. %2$s Error:%3$s %4$s Code: %5$s', 'cyrlitera' ),
+			'Cyrlitera',
+			$e->getMessage(),
+			$e->getCode()
+		);
 		echo '<div class="notice notice-error"><p>' . $error . '</p></div>';
 	};
 

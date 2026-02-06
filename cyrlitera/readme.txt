@@ -1,94 +1,136 @@
-=== Cyrlitera – transliteration of links and file names  ===
-Tags: translitera, cyrillic, latin, l10n, russian, rustolat, slugs, translations, transliteration, media, georgian, european, diacritics, ukrainian
-Contributors: webcraftic, creativemotion, alexkovalevv
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VDX7JNTQPNPFW
+=== Cyrlitera – Transliteration of Links and File Names  ===
+Tags: cyrillic to latin, cyr to lat, rus to lat, cyrillic, transliteration
+Contributors: themeisle
 Requires at least: 5.6
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: trunk
+Stable tag: 1.3.2
 License: GPLv2
 
-The plugin converts Cyrillic, Georgian links, filenames into Latin. It is necessary for correct work of WordPress plugins and improve links readability.
+Convert Cyrillic and Georgian URLs and file names to Latin. Works for all post types, pages, and terms. Custom characters, URL redirects & more.
 
 == Description ==
 
-Transliteration is the transformation of one character into another, for example Cyrillic characters, into Latin. Usually transliteration is used to improve the readability of permalinks and avoid problems with displaying and reading files, because everything in network based on the Latin alphabet. Many plugins made by English-speaking developers do not optimize under the Cyrillic alphabet and can work unstable.
+Cyrlitera converts Cyrillic and Georgian URLs and file names to Latin. It works for all post types, pages, and terms. It gives you options to define your own custom characters and enable automatic redirects.
 
-Cyrlitera transliteration plugin replaces Cyrillic, Georgian characters at posts, pages and tags to create readable permalinks. Also this plugin fixes incorrect file names and removes unnecessary characters, which can cause problems when accessing this file.
+### How It Works
 
-**Cyrillic link example:**<br>
-_site.dev/%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82-%D0%BC%D0%B8%D1%80
+Transliteration is the process of converting characters from one writing system to another, such as converting Cyrillic symbols to Latin. Because most web software and URLs are designed around Latin characters, using Cyrillic or other non-Latin symbols in links or file names can lead to unreadable URLs, accessibility issues, and even broken links. Transliteration ensures your URLs and file names remain clean, readable, and compatible across all platforms.
 
-**Converted into the Latin alphabet:**<br>
-_site.dev/privet-mir
-
-In the first case, you can not visually understand the text of encoded link. In the second case, the link transliteration is implemented, everything looks more clear and the link is more shorter.
-
-**An example of incorrect filename transliteration:**<br>
-%D0%BC%D0%BE%D0%B5_image_ 290.jpg<br>
-A+nice+picture.png
-
-**Images transliteration example:**<br>
-moe_image_ 290.jpg<br>
-a-nice-picture.png
-
-If you ignore file names creation rules, then you can get 404 errors and broken links.
-
-Therefore, create file names using Latin characters and numbers, avoiding special characters, except dashes and underscores. Alternatively, use this plugin. It will do all this work automatically when uploading a file via the WordPress interface and reduce the number of broken links.
-
-#### FEATURES ####
-* Converts permalinks of existing posts, pages, categories and tags when options are enable;
-
-* Keeps the integrity of records' and pages' permalinks;
-
-* Creates a redirect from old posts and pages names to the new ones with converted links;
-
-* Performs transliteration of the attachments file names;
-
-* Converts filenames into lowercase;
-
-* Includes Russian, Belarusian, Ukrainian, Bulgarian, Georgian symbols;
-
-* You can advance a characters base for transliteration;
-
-* You can roll back changes if the plugin converted your URLs incorrectly.
+Cyrlitera automatically replaces Cyrillic and Georgian characters with Latin equivalents to create clean and readable URLs for posts, categories, taxonomies, products, and custom post types. It also fixes incorrect file names by removing unsafe characters and transliterating them during upload, helping prevent 404 errors and broken media links.
 
 
-#### THANKS TO THE PLUGINS' AUTHORS ####
-We used some plugins functions:
-<strong>WP Translitera</strong>, <strong>Rus-To-Lat</strong>, <strong>Cyr to Lat</strong>, <strong>Clearfy — WordPress optimization plugin and disable ultimate tweaker</strong>,translit-it, <strong>Cyr to Lat enhanced</strong>, <strong>Cyr-And-Lat</strong>, <strong>Rus filename translit</strong>, <strong>rus to lat advanced</strong>
+### Examples
 
-#### RECOMMENDED SEPARATE MODULES ####
-We invite you to check out a few other related free plugins that our team has also produced that you may find especially useful:
+**Cyrillic URL before transliteration:**
 
-* [Clearfy – WordPress optimization plugin and disable ultimate tweaker](https://wordpress.org/plugins/clearfy/)
-* [Disable Comments for Any Post Types (Remove Comments)](https://wordpress.org/plugins/comments-plus/)
-* [Disable updates, Disable automatic updates, Updates manager](https://wordpress.org/plugins/webcraftic-updates-manager/)
-* [Cyr-to-lat reloaded – transliteration of links and file names](https://wordpress.org/plugins/cyr-and-lat/ "Cyr-to-lat reloaded")
-* [Disable admin notices individually](https://wordpress.org/plugins/disable-admin-notices/ "Disable admin notices individually")
-* [WordPress Assets manager, dequeue scripts, dequeue styles](https://wordpress.org/plugins/gonzales/  "WordPress Assets manager, dequeue scripts, dequeue styles")
-* [Hide login page](https://wordpress.org/plugins/hide-login-page/ "Hide login page")
+`https://example.com/%D0%BF%D1%80%D0%B8%D0%B2%D0%B5%D1%82-%D0%BC%D0%B8%D1%80`
+
+**Same URL transliterated to Latin:**
+
+`https://example.com/privet-mir`
+
+**Incorrect file names before transliteration:**
+
+`%D0%BC%D0%BE%D0%B5_image_290.jpg`
+`A+nice+picture.png`
+
+**Readable transliterated file names:**
+
+`moe_image_290.jpg`
+`a-nice-picture.png`
+
+By using Latin-based file names and URLs, you avoid issues with encoding, broken links, and unreadable paths. This plugin performs the transliteration automatically each time a file is uploaded, ensuring your media library stays clean and consistent.
+
+### Features
+
+- **Automatically transliterates all new permalinks** for posts, pages, categories, tags, and custom post types.
+- **Automatically transliterates all new attachment file names** on upload, with an option to convert them to lowercase.
+- **Creates automatic redirects** from old URLs to new transliterated ones to prevent broken links.
+- **Supports multiple alphabets**, including Russian, Belarusian, Ukrainian, Bulgarian, and Georgian.
+- **Fully customizable character mapping** – define your own characters and their Latin substitutions to support any language.
+- **Preserves original permalinks**, keeping old URLs intact so nothing is lost during conversion.
+- **Optional conversion of existing slugs**, allowing you to transliterate existing URLs.
+- **Rollback tool** that lets you restore original URLs if needed.
+
+### Support
+
+We’re here to help. Feel free to open a new thread on the [Support Forum] (https://wordpress.org/support/plugin/cyrlitera/).
+
+### Useful Resources
+
+- If you like this plugin, you’re sure to love [our other plugins](https://themeisle.com/wordpress-plugins/) as well.
+- Our blog is a great place to [learn more about WordPress](https://themeisle.com/blog/).
+- Get the most out of your website with our helpful [WordPress YouTube Tutorials](https://youtube.com/playlist?list=PLmRasCVwuvpSep2MOsIoE0ncO9JE3FcKP).
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/plugin-name` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress
-3. Go to the general settings and click on the "Transliteration" tab, activate the options and save the settings.
+1. In your WordPress admin, go to **Plugins > Add New**
+2. In the Search field, type **"Cyrlitera"**
+3. Under "Cyrlitera" by Themeisle, click the **Install Now** link
+4. Once the process is complete, click the **Activate Plugin** link
+5. Go to **Settings → Cyrlitera** to configure the plugin
 
 == Frequently Asked Questions ==
 
-= Converts characters incorrectly? =
-Try to change the problematic symbols in the plugin's settings with the symbol base enlargement field. These characters will replace the default characters.
+= What should I do if a character is transliterated incorrectly? =
 
-= How to restore converted URLs? =
-There is a "Rollback changes" button in the plugin settings. This option works only for links, which has been transliterated. This will not work for filenames.
+If a character is not transliterated the way you expect, you can fix it using the plugin’s **Custom Character Sets** feature. This allows you to redefine any character and assign your own Latin substitution. Simply add the problematic character and specify how you want it to be converted, and Cyrlitera will apply your custom rule to all new URLs and file names.
+
+= How can I roll back changes after converting existing URLs? =
+
+If you used the option to convert existing article URLs and want to undo those changes, Cyrlitera includes a **Rollback Tool**. This will restore all previously converted slugs back to their original versions.
+
+**Important**: The rollback works only for URLs that Cyrlitera converted. It does not roll back file names.
+
+= Does Cyrlitera automatically redirect old URLs to the new ones? =
+
+Cyrlitera can automatically redirect old slugs to the new transliterated URLs, but this feature must be **enabled** in the plugin settings. Once redirections are turned on, the plugin will create redirects for all URLs it converts, helping prevent 404 errors and preserving your SEO after the transliteration process.
+
+= Does Cyrlitera modify the text inside my posts or pages? =
+
+No. The plugin only affects slugs (URLs) and file names. Your post content remains unchanged.
+
+= Can I define my own transliteration rules? =
+
+Yes. Cyrlitera allows you to create **custom character mappings**, so you can define exactly how each character should be transliterated. This is useful for supporting additional languages or adjusting special cases.
+
+= Will Cyrlitera work with custom post types? =
+
+Yes. Any post type that supports slugs (such as products, portfolio items, or custom taxonomies) can be automatically transliterated.
 
 == Screenshots ==
-1. Setting page
-2. Simple for posts
-2. Simple for filenames
+1. Settings page
+2. Transliteration of posts URLs
+2. Transliteration of file names
 
 == Changelog ==
+
+#####   Version 1.3.2 (2026-01-12)
+
+- Improved and simplified settings page layout
+- Updated newsletter
+- Enhanced security and updated dependencies
+
+
+
+
+#####   Version 1.3.1 (2025-12-16)
+
+- Enhanced security
+
+
+
+
+####   Version 1.3.0 (2025-11-06)
+
+Cyrlitera plugin has been acquired by Themeisle 🎉
+We’re happy to announce that Themeisle is now the new owner of Cyrlitera. This acquisition will help ensure the plugin’s continued development, better support, and exciting new updates in the future.
+
+Your existing setup will continue to work as usual — no action is required on your part.
+
+
+
 = 1.2.0 (05.12.2024) =
 * Added: Compatibility with Wordpress 6.7
 

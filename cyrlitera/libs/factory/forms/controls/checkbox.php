@@ -130,10 +130,10 @@
 				<div <?php $this->attrs() ?>>
 					<button type="button" class="btn btn-default btn-small btn-sm factory-on <?php if( $value ) {
 						echo 'active';
-					} ?>"><?php _e('On', 'wbcr_factory_forms_480') ?></button>
+					} ?>"><?php _e('Enabled', 'wbcr_factory_forms_480') ?></button>
 					<button type="button" class="btn btn-default btn-small btn-sm factory-off <?php if( !$value ) {
 						echo 'active';
-					} ?>" data-value="0"><?php _e('Off', 'wbcr_factory_forms_480') ?></button>
+					} ?>" data-value="0"><?php _e('Disabled', 'wbcr_factory_forms_480') ?></button>
 					<input type="checkbox" style="display: none" id="<?php echo esc_attr($name_on_form); ?>" class="factory-result" name="<?php echo esc_attr($name_on_form); ?>" value="<?php echo esc_attr($value); ?>" <?php if( $value ) {
 						echo 'checked="checked"';
 					} ?>" />

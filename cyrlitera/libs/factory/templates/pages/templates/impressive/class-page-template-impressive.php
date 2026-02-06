@@ -454,16 +454,6 @@ if ( ! class_exists( 'WBCR\Factory_Templates_134\Impressive' ) ) {
 			return isset( $page_submenu[ $current_page ] ) ? $page_submenu[ $current_page ] : null;
 		}
 
-		/**
-		 * @param int $a
-		 * @param int $b
-		 *
-		 * @return bool
-		 */
-		protected function pageMenuSort( $a, $b ) {
-			return $b['position'] <=> $a['position'];
-		}
-
 		protected function showPageMenu() {
 			$page_menu    = $this->getPageMenu();
 			$self_page_id = $this->getResultId();
@@ -528,6 +518,15 @@ if ( ! class_exists( 'WBCR\Factory_Templates_134\Impressive' ) ) {
 			<?php
 		}
 
+		/**
+		 * @param int $a
+		 * @param int $b
+		 *
+		 * @return bool
+		 */
+		protected function pageMenuSort( $a, $b ) {
+			return $b['position'] <=> $a['position'];
+		}
 
 		protected function showPageSubMenu() {
 			$self_page_id = $this->getResultId();
@@ -646,16 +645,9 @@ if ( ! class_exists( 'WBCR\Factory_Templates_134\Impressive' ) ) {
 			if ( empty( $widgets ) ) {
 				return;
 			}
-			?>
-            <div class="row">
-            <div class="wbcr-factory-top-sidebar">
-				<?php foreach ( $widgets as $widget_content ): ?>
-                    <div class="col-sm-4">
-						<?php echo $widget_content ?>
-                    </div>
-				<?php endforeach; ?>
-            </div>
-			<?php
+			foreach ( $widgets as $widget_content ) {
+				echo $widget_content;
+			}
 		}
 
 		/**
@@ -752,9 +744,11 @@ if ( ! class_exists( 'WBCR\Factory_Templates_134\Impressive' ) ) {
             <div id="WBCR" class="wrap">
                 <div class="wbcr-factory-templates-134-impressive-page-template factory-bootstrap-482 factory-fontawesome-000">
                     <div class="wbcr-factory-options wbcr-factory-options-<?php echo esc_attr( $this->id ) ?>">
-                        <div class="wbcr-factory-left-navigation-bar">
-							<?php $this->showPageMenu() ?>
-                        </div>
+						<?php if ( 'transliteration' !== $this->id ) : ?>
+							<div class="wbcr-factory-left-navigation-bar">
+								<?php $this->showPageMenu(); ?>
+							</div>
+						<?php endif; ?>
 						<?php
 						$min_height = 0;
 						foreach ( $this->getPageMenu() as $page ) {
@@ -798,9 +792,11 @@ if ( ! class_exists( 'WBCR\Factory_Templates_134\Impressive' ) ) {
                 <div class="wbcr-factory-templates-134-impressive-page-template factory-bootstrap-482 factory-fontawesome-000">
                     <div class="wbcr-factory-page wbcr-factory-page-<?php echo $this->id ?>">
 						<?php $this->showHeader(); ?>
-                        <div class="wbcr-factory-left-navigation-bar">
-							<?php $this->showPageMenu() ?>
-                        </div>
+						<?php if ( 'transliteration' !== $this->id ) : ?>
+							<div class="wbcr-factory-left-navigation-bar">
+								<?php $this->showPageMenu(); ?>
+							</div>
+						<?php endif; ?>
 						<?php
 						$min_height = 0;
 						foreach ( $this->getPageMenu() as $page ) {

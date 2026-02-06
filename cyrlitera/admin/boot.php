@@ -53,7 +53,7 @@ function wbcr_cyrlitera_get_conflict_notices_error() {
 	$plugin_title = WCTR_Plugin::app()->getPluginTitle();
 
 	$default_notice = $plugin_title . ': ' . __( 'We found that you have the plugin %s installed. The functions of this plugin already exist in %s. Please deactivate plugin %s to avoid conflicts between plugins functions.', 'cyrlitera' );
-	$default_notice .= ' ' . __( 'If you do not want to deactivate the plugin %s for some reason, we strongly recommend do not use the same plugins functions at the same time!', 'cyrlitera' );
+	$default_notice .= ' ' . __( 'If you do not want to deactivate the plugin %s for some reason, we strongly recommend that you do not use the same plugin functions at the same time!', 'cyrlitera' );
 
 	$install_conflict_plugins = wbcr_cyrlitera_install_conflict_plugins();
 
@@ -111,7 +111,6 @@ if ( ! defined( 'LOADING_CYRLITERA_AS_ADDON' ) ) {
 
 			$url .= '?utm_source=wordpress.org&utm_campaign=' . WCTR_Plugin::app()->getPluginName();
 
-			$links[] = '<a href="' . $url . '" style="color: #FF5722;font-weight: bold;" target="_blank">' . __( 'Get ultimate plugin free', 'cyrlitera' ) . '</a>';
 		}
 
 		return $links;
@@ -129,7 +128,7 @@ if ( ! defined( 'LOADING_CYRLITERA_AS_ADDON' ) ) {
 	 */
 	function wbcr_cyrlitera_rating_widget_url( $page_url, $plugin_name ) {
 		if ( ! defined( 'LOADING_CYRLITERA_AS_ADDON' ) && ( $plugin_name == WCTR_Plugin::app()->getPluginName() ) ) {
-			return 'https://goo.gl/ecaj2V';
+			return 'https://wordpress.org/support/plugin/cyrlitera/reviews/#new-post';
 		}
 
 		return $page_url;
@@ -187,43 +186,43 @@ if ( ! defined( 'LOADING_CYRLITERA_AS_ADDON' ) ) {
 
 		$options[] = [
 			'name'  => 'use_transliteration',
-			'title' => __( 'Use transliteration', 'cyrlitera' ),
+			'title' => __( 'Apply transliteration to new content', 'cyrlitera' ),
 			'tags'  => $tags
 		];
 
 		$options[] = [
-			'name'  => 'use_force_transliteration',
-			'title' => __( 'Force transliteration', 'cyrlitera' ),
-			'tags'  => []
-		];
-
-		$options[] = [
-			'name'  => 'dont_use_transliteration_on_frontend',
-			'title' => __( 'Don\'t use transliteration in frontend', 'cyrlitera' ),
-			'tags'  => []
-		];
-
-		$options[] = [
 			'name'  => 'use_transliteration_filename',
-			'title' => __( 'Convert file names', 'cyrlitera' ),
+			'title' => __( 'Transliterate file names on upload', 'cyrlitera' ),
 			'tags'  => $tags
 		];
 
 		$options[] = [
 			'name'  => 'filename_to_lowercase',
-			'title' => __( 'Convert file names into lowercase', 'cyrlitera' ),
+			'title' => __( 'Convert file names to lowercase on upload', 'cyrlitera' ),
 			'tags'  => $tags
 		];
 
 		$options[] = [
 			'name'  => 'redirect_from_old_urls',
-			'title' => __( 'Redirection old URLs to new ones', 'cyrlitera' ),
+			'title' => __( 'Redirect old URLs to transliterated URLs', 'cyrlitera' ),
 			'tags'  => []
 		];
 
 		$options[] = [
 			'name'  => 'custom_symbols_pack',
-			'title' => __( 'Character Sets', 'cyrlitera' ),
+			'title' => __( 'Custom character mappings', 'cyrlitera' ),
+			'tags'  => []
+		];
+
+		$options[] = [
+			'name'  => 'dont_use_transliteration_on_frontend',
+			'title' => __( 'Disable transliteration on the frontend', 'cyrlitera' ),
+			'tags'  => []
+		];
+
+		$options[] = [
+			'name'  => 'use_force_transliteration',
+			'title' => __( 'Force transliteration (override other plugins)', 'cyrlitera' ),
 			'tags'  => []
 		];
 

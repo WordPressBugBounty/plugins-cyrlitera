@@ -63,7 +63,7 @@ class WCTR_ConfigurateCyrlitera extends WBCR\Factory_Templates_134\Configurate {
 	public function acfScripts() {
 		global $pagenow;
 
-		$on_acf_edit_page = 'post.php' === $pagenow && isset( $_GET['post'] ) && 'acf-field-group' === get_post_type( $_GET['post'] );
+		$on_acf_edit_page = 'post.php' === $pagenow && isset( $_GET['post'] ) && 'acf-field-group' === get_post_type( absint( $_GET['post'] ) );
 		if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) and $on_acf_edit_page ) {
 			$data = "window.cyr_and_lat_dict = " . json_encode( WCTR_Helper::getSymbolsPack() ) . ";";
 
