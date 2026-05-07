@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/cyrlitera/
  * Description: The plugin converts Cyrillic, Georgian links, filenames into Latin. It is necessary for correct work of WordPress plugins and improve links readability.
  * Author: Themeisle
- * Version: 1.3.2
+ * Version: 1.3.3
  * Text Domain: cyrlitera
  * Domain Path: /languages/
  * Author URI: https://themeisle.com

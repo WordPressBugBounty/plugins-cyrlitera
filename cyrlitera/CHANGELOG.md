@@ -1,3 +1,7 @@
+#####   Version 1.3.3 (2026-05-07)
+
+- Update dependencies
+
 #####   Version 1.3.2 (2026-01-12)
 
 - Improved and simplified settings page layout

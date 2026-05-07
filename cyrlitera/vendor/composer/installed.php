@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'codeinwp/cyrlitera',
-        'pretty_version' => 'v1.3.2',
-        'version' => '1.3.2.0',
-        'reference' => 'b5319c33847d9294f0e397c5d0e207800a64de71',
+        'pretty_version' => 'v1.3.3',
+        'version' => '1.3.3.0',
+        'reference' => 'edb95b7907701ff829c8c64b69dad93eb0cae623',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,18 +11,18 @@
     ),
     'versions' => array(
         'codeinwp/cyrlitera' => array(
-            'pretty_version' => 'v1.3.2',
-            'version' => '1.3.2.0',
-            'reference' => 'b5319c33847d9294f0e397c5d0e207800a64de71',
+            'pretty_version' => 'v1.3.3',
+            'version' => '1.3.3.0',
+            'reference' => 'edb95b7907701ff829c8c64b69dad93eb0cae623',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'codeinwp/themeisle-sdk' => array(
-            'pretty_version' => '3.3.50',
-            'version' => '3.3.50.0',
-            'reference' => '3c1f8dfc2390e667bbc086c5d660900a7985efa6',
+            'pretty_version' => '3.3.51',
+            'version' => '3.3.51.0',
+            'reference' => 'bb2a8414b0418b18c68c9ff1df3d7fb10467928d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../codeinwp/themeisle-sdk',
             'aliases' => array(),

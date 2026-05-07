@@ -1,10 +1,10 @@
 === Cyrlitera – Transliteration of Links and File Names  ===
-Tags: cyrillic to latin, cyr to lat, rus to lat, cyrillic, transliteration
+Tags: transliteration, cyrillic, slugs, georgian, multilingual
 Contributors: themeisle
 Requires at least: 5.6
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2
 
 Convert Cyrillic and Georgian URLs and file names to Latin. Works for all post types, pages, and terms. Custom characters, URL redirects & more.
@@ -105,6 +105,13 @@ Yes. Any post type that supports slugs (such as products, portfolio items, or cu
 2. Transliteration of file names
 
 == Changelog ==
+
+#####   Version 1.3.3 (2026-05-07)
+
+- Update dependencies
+
+
+
 
 #####   Version 1.3.2 (2026-01-12)
 
