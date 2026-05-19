@@ -1,3 +1,8 @@
+#####   Version 1.3.4 (2026-05-19)
+
+- Improved compatibility with WP 7.0
+- Updated dependencies
+
 #####   Version 1.3.3 (2026-05-07)
 
 - Update dependencies
