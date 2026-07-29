@@ -4,7 +4,7 @@ Contributors: themeisle
 Requires at least: 5.6
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2
 
 Convert Cyrillic and Georgian URLs and file names to Latin. Works for all post types, pages, and terms. Custom characters, URL redirects & more.
@@ -105,6 +105,13 @@ Yes. Any post type that supports slugs (such as products, portfolio items, or cu
 2. Transliteration of file names
 
 == Changelog ==
+
+#####   Version 1.3.6 (2026-07-29)
+
+- Updated dependencies
+
+
+
 
 #####   Version 1.3.5 (2026-07-24)
 
